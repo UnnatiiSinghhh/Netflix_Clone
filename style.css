@@ -1,0 +1,452 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+}
+
+.hero {
+    background-image: url(assets/images/bgg.jpg);
+    height: 98vh;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    border-bottom: 7px solid grey;
+}
+
+.hero .box {
+    height: 98vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 23px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 80vw;
+    margin: auto;
+    position: relative;   /* needed for z-index */
+    z-index: 2;   /* above overlay */
+    box-sizing: border-box;
+}
+
+nav svg {
+    width: 9.25rem;
+    height: 2.5rem;
+    color: rgb(229, 9, 20);
+    fill: currentColor;
+    display: block;
+    padding-top: 28px;
+}
+
+nav .btns {
+    display: flex;
+    gap: 15px;
+    padding-top: 25px;
+}
+
+nav .btns .btn2 {
+    background-color: #e50914;
+    color: #fff;
+    padding: 7px 15px;
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+nav .btns .btn2:hover {
+    background-color: #c40710;
+    box-shadow: inset 0 0 10px rgb(0, 0, 0, 0.4);
+}
+
+nav .btns .btn1 {
+    color: #fff;
+    background-color: rgba(17, 16, 16, 0.9);
+    border: 0.5px solid #6e6969;
+    padding: 0 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: inset 10px 10px 17px rgba(16, 15, 15, 0.4);
+}
+
+.hero .box h1 {
+    font-weight: 900;
+    display: block;
+    line-height: 120%;
+    font-size: 3rem;
+}
+
+.p1 {
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.email-form input {
+    padding: 13px 110px 13px 5px;
+    color: rgb(156, 8, 8);
+    background-color: rgba(41, 39, 39, 0.721);
+    border: 1.5px solid rgba(179, 166, 166, 0.726);
+    border-radius: 5px;
+    text-align: start;
+    font-size: large;
+    transition: all 0.3s ease;
+}
+
+.email-form input:corner-present {
+    border: 2px solid #fff;
+}
+
+.box button {
+    background-color: #e50914;
+    color: #fff;
+    padding: 13px 28px;
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: large;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.box button:hover {
+    background-color: #c40710;
+    box-shadow: inset 0 0 10px rgb(0, 0, 0, 0.4);
+}
+
+.main {
+    margin: 0 140px;
+}
+
+.trending-heading,
+.reasons-heading,
+.FAQ-heading {
+    color: #fff;
+    background-color: black;
+    padding: 15px 0;
+    margin-top: 40px;
+}
+
+.movie-cards {
+    display: flex;
+    gap: 30px;
+    background-color: black;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    align-items: center;
+}
+
+.card {
+    list-style-type: none;
+    position: relative;
+}
+
+.card img {
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.card-numbers {
+    color: black;
+    position: absolute;
+    bottom: -1px;
+    left: -25px;
+    font-size: 110px;
+    font-weight: 900;
+    -webkit-text-stroke: 0.25rem rgb(223, 202, 202);
+    text-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.5);
+    font-family: sans-serif;
+}
+
+.svg {
+    border: 2px solid rgb(40, 38, 38);
+    border-radius: 8px;
+    padding: 45px 0;
+    background-color: rgb(40, 38, 38);
+}
+
+.reason-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    background-color: black;
+    gap: 10px;
+    align-items: center;
+    justify-items: center;
+}
+
+.cards {
+    position: relative;
+    border-radius: 15px;
+    background: linear-gradient(149deg, #192247 0%, #210e17 96.86%);
+    color: grey;
+    padding: 20px;
+    overflow-wrap: anywhere;
+    width: 260px;
+    height: 220px;
+}
+
+.cards svg{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.card-headings {
+    color: #fff;
+}
+
+.FAQ {
+    background-color: black;
+}
+
+.Questions ul {
+    color: #fff;
+    background-color: #262525;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: background-color 0.2s ease;
+}
+
+.Questions ul:hover{
+    background-color: #403f3f;
+}
+
+.Questions li {
+    padding: 1.2rem;
+    list-style-type: none;
+}
+
+.watch p {
+    padding: 55px 0 24px 0;
+    color: #fff;
+    text-align: center;
+    font-size: 17px;
+}
+
+.watch form {
+    text-align: center;
+}
+
+.watch form input {
+    padding: 13px 250px 13px 5px;
+    color: rgb(156, 8, 8);
+    background-color: rgba(41, 39, 39, 0.721);
+    border: 1.5px solid rgba(179, 166, 166, 0.726);
+    border-radius: 5px;
+    text-align: start;
+    font-size: large;
+    transition: all 0.3s ease;
+}
+
+.watch form input:corner-present {
+    border: 2px solid #fff;
+}
+
+.watch button {
+    background-color: #e50914;
+    color: #fff;
+    padding: 13px 28px;
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: large;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.watch button:hover {
+    background-color: #c40710;
+    box-shadow: inset 0 0 10px rgb(0, 0, 0, 0.4);
+}
+
+.footer {
+    background-color: black;
+    color: #acabab;
+    font-weight: 400;
+    margin-bottom: 8px;
+    margin: 70px 150px 150px 150px;
+    max-width: 1000px;
+}
+
+.footer-grid a {
+    display: block;
+    color: #acabab;
+    font-weight: 400;
+    padding: 7px 0;
+}
+
+.footer span a {
+    color: #acabab;
+    font-weight: 400;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 100px;
+    margin: 50px 0;
+}
+
+footer .btns .btn1 {
+    color: #fff;
+    background-color: rgba(17, 16, 16, 0.9);
+    border: 0.5px solid #6e6969;
+    padding: 6px 18px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 13px;
+    box-shadow: inset 10px 10px 17px rgba(16, 15, 15, 0.4);
+    margin-bottom: 35px;
+}
+
+.footer p {
+    margin-bottom: 35px;
+    color: #acabab;
+    font-weight: 400;
+}
+
+@media (max-width: 1500px){
+    .cards{
+        width: 220px;
+    }
+}
+
+@media (max-width: 1350px){
+    .cards{
+        width: 180px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .main{
+        margin: 0 50px;
+    }
+
+    .footer{
+        margin: 70px 50px 150px 50px;
+    }
+    .reason-cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    }
+
+    .cards {
+        width: 450px;   
+        height: 150px;
+    }
+}
+
+@media (max-width: 1050px){
+    .cards{
+        width: 400px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .watch form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .watch form input {
+        padding: 13px 50px 13px 5px;
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    .watch button {
+        width: auto;
+        padding: 13px 20px;
+        font-size: 16px;
+        margin-left: 5px; 
+    }
+}
+
+@media(max-width: 950px){
+    .reason-cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .cards {
+        width: 100%; 
+        height: 170px;
+    }
+}
+
+@media (max-width: 800px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 80px;
+    }
+
+    .watch form{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .watch form input, .email-form input{
+        padding: 13px 50px 13px 5px;
+        width: 80%;
+        margin-bottom: 15px;
+    }
+
+    .watch button , .box button{
+        width: auto;
+        padding: 13px 20px;
+        font-size: 16px;
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .watch form{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .watch form input, .email-form input{
+        padding: 12px 10px;
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+    .watch button , .box button{
+        width: auto;
+        padding: 12px 20px;
+        font-size: 16px;
+        margin-left: 10px;
+    }
+
+    .cards {
+        width: 100%;
+        height: 200px;
+    }
+}
